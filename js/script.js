@@ -3,6 +3,7 @@ function findMax(aNums) {
     var iMax = aNums[0];
 
     for(var iCount=0; iCount<aNums.length; iCount++) {
+        // iMax was displaying the minimum rather than the maximum
         if(iMax < aNums[iCount]) {
             iMax = aNums[iCount];
         }
@@ -17,6 +18,7 @@ function findMax(aNums) {
 var iSize = parseInt(prompt('Class size?'));
 var aGradesPhysics = [];
 var aGradesChemistry = [];
+// This variable was not an array 
 var aGradesBiology = [];
 
 //ParseInt does the same as Number but removes anything other than a number from the value if input
@@ -36,15 +38,17 @@ for(var iCount=0; iCount<iSize; iCount++) {
 var aAverageGrades = [];
 
 for(var iCount=0; iCount<iSize; iCount++) {
+    // Changed 'aGradesPhysics.length' to a '3' as there are only 3 subjects that a student can take
     var fAverage = (aGradesPhysics[iCount] + aGradesChemistry[iCount] + aGradesBiology[iCount]) / 3;
     aAverageGrades.push(fAverage);
 }
-console.log(aAverageGrades);
+// Removed the 's' from the findMax method
 var iTopGrade = findMax(aAverageGrades);
 
 //output: list result for each student and top grade
 
 
+// Started the loop that searches through the array at 0 when initially it was starting from 1
 for(var iCount=0; iCount<aAverageGrades.length; iCount++) {
     if(aAverageGrades[iCount] < 50) {
 
@@ -60,4 +64,5 @@ for(var iCount=0; iCount<aAverageGrades.length; iCount++) {
     }
 }
 
+// The 'iTopGrade' varibale was incorrectly written with a lower case 'g' instead of an upper case
 document.write('<h1>The top overall grade is '+ iTopGrade +'</h1>');
